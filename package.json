@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "db:create": "wrangler d1 create hono-app-db",
+    "db:seed:": "wrangler d1 execute hono-app-db --file schema.sql",
+    "db:seed:local": "wrangler d1 execute --local hono-app-db --file schema.sql"
+  },
+  "packageManager": "pnpm@8.15.4",
+  "dependencies": {
+    "hono": "^4.0.8",
+    "nanoid": "^5.0.6"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240208.0",
+    "wrangler": "^3.25.0"
+  }
+}
